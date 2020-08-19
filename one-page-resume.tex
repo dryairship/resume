@@ -1,0 +1,71 @@
+\documentclass[9pt]{extarticle}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[document]{ragged2e}
+
+\usepackage[a4paper, left=0.5in, right=0.5in, top=0.5in, bottom=0.5in]{geometry}
+\title{Resume}
+\author{Priydarshi Singh}
+
+\usepackage{multicol}     %% Allows to create more than two columns
+\usepackage{array}        %% For adjusting column widths
+\usepackage{fontawesome}
+\usepackage[hidelinks, unicode]{hyperref}
+\usepackage[compact]{titlesec}
+\usepackage{graphicx}
+\graphicspath{ {./} }
+
+\usepackage{enumitem}
+\setitemize{noitemsep,topsep=0pt,parsep=0.5pt,partopsep=0.75pt,leftmargin=*}
+
+\newcommand{\cventry}[5]{
+  {\small \textbf{#1}} \hfill {\small#2} \\
+  {\small #3 \hfill \textit{#4}}
+  #5
+  \vspace{2mm}
+}
+
+\newcommand{\excventry}[4]{
+  {\small \textbf{#1}} \hfill \textit{\small #2} \\
+  {\small #3}
+  #4
+  \vspace{2mm}
+}
+
+\newcommand{\smallcventry}[5]{
+  {\small \textbf{#2} \hfill #3} \\
+  \quad {\footnotesize \textit{#1, #4} \hfill #5}
+  \vspace{2mm}
+}
+
+% lol maybe try some other size too
+\makeatletter\newcommand\HUGE{\@setfontsize\Huge{24}{47}}\makeatother
+
+\titlespacing*{\section}{0pt}{5pt plus 0pt minus 0pt}{0pt plus 2pt minus 2pt}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\input{one-page-resume/multicoltitle}
+
+\vspace{-1mm}
+\input{one-page-resume/education.tex}
+
+\begin{minipage}[t]{0.49\textwidth}
+  \input{one-page-resume/experience.tex}
+  \vspace{-1mm}
+  \input{one-page-resume/skills.tex}
+  \input{one-page-resume/positions.tex}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\textwidth}
+  \input{one-page-resume/projects.tex}
+  \input{one-page-resume/programming.tex}
+  \vspace{-1mm}
+  \input{one-page-resume/coursework.tex}
+  \vspace{-1mm}
+  \input{one-page-resume/extracurricular.tex}
+\end{minipage}
+
+\end{document}
